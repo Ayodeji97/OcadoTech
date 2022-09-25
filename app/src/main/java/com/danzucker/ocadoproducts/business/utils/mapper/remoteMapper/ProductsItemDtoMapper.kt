@@ -9,11 +9,12 @@ class ProductsItemDtoMapper @Inject constructor() : BaseDtoMapper<List<ProductIt
     override fun transformToEntity(type: List<ProductItemsDto>): List<ProductsItemEntity> =
         type.map { productItemsDto ->
             ProductsItemEntity(
-                id = productItemsDto.id,
-                price = productItemsDto.price,
-                title = productItemsDto.title,
-                size = productItemsDto.size,
-                imageUrl = productItemsDto.imageUrl
+                id = productItemsDto.id ?: 0,
+                price = productItemsDto.price ?: "",
+                title = productItemsDto.title ?: "",
+                size = productItemsDto.size ?: "",
+                imageUrl = productItemsDto.imageUrl ?: ""
             )
         }
+
 }

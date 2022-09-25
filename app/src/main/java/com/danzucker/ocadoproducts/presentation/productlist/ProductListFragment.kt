@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.danzucker.ocadoproducts.databinding.FragmentProductListBinding
 import com.danzucker.ocadoproducts.presentation.adapter.ProductListAdapter
@@ -47,6 +48,10 @@ class ProductListFragment : Fragment() {
         productListAdapter = ProductListAdapter(
             onProductClicked = { productItem ->
                 // navigate with the product item Id
+                val action = ProductListFragmentDirections.actionProductListFragmentToProductDetailFragment(
+                    productItem.id.toString()
+                )
+                findNavController().navigate(action)
             }
         )
 

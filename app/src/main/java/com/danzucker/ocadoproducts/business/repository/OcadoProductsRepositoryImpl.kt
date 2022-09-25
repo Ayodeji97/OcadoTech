@@ -4,6 +4,7 @@ import android.util.Log
 import com.danzucker.ocadoproducts.business.datasource.cache.cachesource.OcadoProductsCacheSource
 import com.danzucker.ocadoproducts.business.datasource.cache.model.ProductsItemEntity
 import com.danzucker.ocadoproducts.business.datasource.remote.model.ClustersDto
+import com.danzucker.ocadoproducts.business.datasource.remote.model.ProductItemsDto
 import com.danzucker.ocadoproducts.business.datasource.remote.remotesource.OcadoProductsRemoteSource
 import com.danzucker.ocadoproducts.business.utils.Result
 import com.danzucker.ocadoproducts.business.utils.mapper.remoteMapper.ProductsItemDtoMapper
@@ -34,6 +35,26 @@ class OcadoProductsRepositoryImpl @Inject constructor(
                 }
 
                 is Result.Error -> {
+                    emit(Result.Error(response.exception))
+                }
+            }
+        }
+
+    override suspend fun getProductById(id : String): Flow<Result<ProductItemsDto>> =
+        flow {
+
+            when (val response = ocadoProductsRemoteSource.getProductById(id)) {
+                is Result.Success -> {
+                    if (response.data != null) {
+                        Log.i("SEEE20", "${response.data}")
+                        emit(Result.Success(response.data))
+                    } else {
+                        Log.i("SEEE23", "${response.data}")
+                        emit(Result.Success(null))
+                    }
+                }
+                is Result.Error -> {
+                    Log.i("SEEE23", "Hee")
                     emit(Result.Error(response.exception))
                 }
             }
