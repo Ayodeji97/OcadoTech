@@ -33,18 +33,14 @@ class OcadoProductsRemoteSourceImpl @Inject constructor(
     override suspend fun getProductById(id: String): Result<ProductItemsDto> =
         withContext(ioDispatcher) {
             return@withContext try {
-                Log.i("SEEE18", "${id}")
                 val apiResponse = ocadoProductsService.getProductById(id)
                 if (apiResponse.isSuccessful) {
-                    Log.i("SEEE11", "${apiResponse.body()}")
                     val productItemsDto = apiResponse.body()
                     Result.Success(productItemsDto)
                 } else {
-                    Log.i("SEEE12", "${apiResponse.body()}")
                     Result.Success(null)
                 }
             } catch (e: Exception) {
-                Log.i("SEEE11", "GGGG")
                 Result.Error(e)
             }
 

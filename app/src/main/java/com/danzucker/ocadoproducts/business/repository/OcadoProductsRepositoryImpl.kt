@@ -46,15 +46,12 @@ class OcadoProductsRepositoryImpl @Inject constructor(
             when (val response = ocadoProductsRemoteSource.getProductById(id)) {
                 is Result.Success -> {
                     if (response.data != null) {
-                        Log.i("SEEE20", "${response.data}")
                         emit(Result.Success(response.data))
                     } else {
-                        Log.i("SEEE23", "${response.data}")
                         emit(Result.Success(null))
                     }
                 }
                 is Result.Error -> {
-                    Log.i("SEEE23", "Hee")
                     emit(Result.Error(response.exception))
                 }
             }

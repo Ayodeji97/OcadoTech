@@ -34,10 +34,8 @@ class ProductDetailViewModel @Inject constructor(
                 _productListViewState.value = state.copy(isLoading = true)
                 val productDetail = ocadoProductsDetailUseCase.invoke(id)
                 if (productDetail != null) {
-                    Log.i("SEEE2", "${productDetail}")
                     _productListViewState.value = state.copy(productDetail = productDetail)
                 } else {
-                    Log.i("SEEE1", "${productDetail}")
                     _productListViewState.value = state.copy(error = "Something went wrong!")
                 }
             }
