@@ -4,4 +4,4 @@
 # OcadoTech
 Ocado Assessment Task
 
-NB: Documentation for this simple project will soon be added. Bear with me.🤠
+NB: Documentation for this simple project will soon be added.🤠
