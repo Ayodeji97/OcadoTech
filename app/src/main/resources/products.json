@@ -1,0 +1,35 @@
+{
+  "clusters": [
+    {
+      "tag": "Fresh > Fruit > Bananas",
+      "items": [
+        {
+          "id": 309396011,
+          "price": "1.45",
+          "title": "Ocado Organic Fairtrade Bananas",
+          "size": "6 per pack",
+          "imageUrl": "https://mobile.ocado.com/webservices/catalogue/items/item/309396011/images/image/0/240x240.jpg"
+        },
+        {
+          "id": 227255011,
+          "price": "4.45",
+          "title": "Ocado Fairtrade Ripen at Home Bananas",
+          "size": "5 per pack",
+          "imageUrl": "https://mobile.ocado.com/webservices/catalogue/items/item/227255011/images/image/0/240x240.jpg"
+        }
+      ]
+    },
+    {
+      "tag": "Fresh > Salads & Herbs > Cucumber",
+      "items": [
+        {
+          "id": 240875011,
+          "price": "0.64",
+          "title": "Ocado Cucumber",
+          "size": "1 per pack",
+          "imageUrl": "https://mobile.ocado.com/webservices/catalogue/items/item/240875011/images/image/0/240x240.jpg"
+        }
+      ]
+    }
+  ]
+}
