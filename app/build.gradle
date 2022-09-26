@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -88,7 +92,7 @@ dependencies {
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
     kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
 
     // DataStore
@@ -118,7 +122,7 @@ dependencies {
     testImplementation "com.squareup.okhttp3:mockwebserver:$mockWebServer"
     testImplementation "io.mockk:mockk:1.10.5"
 
-    
+
 
     // Junit
     testImplementation "junit:junit:$junitVersion"
@@ -172,6 +176,10 @@ dependencies {
 
     // Truth
     androidTestImplementation "com.google.truth:truth:$truthVersion"
+
+    def glide_version = "4.12.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     // Dagger Hilt - Test (When needed)
 

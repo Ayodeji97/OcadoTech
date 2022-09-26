@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">OcadoProducts</string>
+
+    <string name="ocado_product">OcadoTech Product</string>
+    <string name="search_str">Search Product…</string>
+    <string name="currency_str">$ %s</string>
+    <string name="product_details_str">Product Description</string>
+    <string name="product_allergies_str">Product Allergies</string>
+    <string name="back_str">Back</string>
 </resources>
