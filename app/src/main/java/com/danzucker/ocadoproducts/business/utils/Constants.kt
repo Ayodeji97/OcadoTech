@@ -10,6 +10,6 @@ object Constants {
     const val DATABASE_NAME = "app_database"
 
     // Error Message Session
-    const val UNABLE_TO_FETCH_DATA = "Error fetching data."
+    const val NO_PRODUCT_AVAILABLE = "No Product Available. Retry!"
 
 }

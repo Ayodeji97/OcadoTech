@@ -18,17 +18,13 @@ class OcadoProductsDetailUseCase @Inject constructor(
         ocadoProductsRepository.getProductById(id).collect {
             when(it) {
                 is Result.Success -> {
-                    Log.i("SEEE1999", "${it.data}")
-                    Log.i("SEEE", "${id}")
                     ProductDetails = it.data
                 }
                 is Result.Error -> {
-                    Log.i("SEEE4", "Heree")
                     ProductDetails = null
                 }
             }
         }
-
         return (ProductDetails)?.let { productsDetailDtoMapper.transformToEntity(it) }
     }
 
